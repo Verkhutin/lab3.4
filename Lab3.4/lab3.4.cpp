@@ -18,8 +18,8 @@ int main() {
 
 	if (((x >= -R && x <= 0) && (y >= -R && y <= 0)) ||
 		(x >= 0 && x <= R) && (y >= 0 && y <= R) ||
-		(((x >= -R && x <= 0)) && (y <= R - sqrt(R * R - pow((x + R), 2)))) ||
-		((x >= 0 && x <= R) && (y >= -R + sqrt(R * R - pow((x - R), 2)))))
+		(((x >= -R && x <= 0)) && (y >= 0 && y <= R) && ((y - R*R)*(y - R * R) <= R*R - (x + R)* (x + R))) ||
+		((x >= 0 && x <= R) && (y <= 0 && y >= -R) && ((y + R * R) * (y + R * R) >= R * R - (x - R) * (x - R))))
 		cout << "yes" << endl;
 	else
 		cout << "no" << endl;
